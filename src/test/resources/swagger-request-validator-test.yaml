@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+        title: swagger-request-validator-test
+        version: '1.0'
+servers:
+        - url: 'http://localhost:3000'
+paths:
+        /test:
+                get:
+                        summary: Your GET endpoint
+                        tags: []
+                        responses:
+                                '200':
+                                        description: OK
+                                        content:
+                                                application/json:
+                                                        schema:
+                                                                $ref: '#/components/schemas/GetResponse'
+                        operationId: get-test
+                post:
+                        summary: ''
+                        operationId: post-test
+                        responses:
+                                '201':
+                                        description: Created
+                                        content:
+                                                application/json:
+                                                        schema:
+                                                                $ref: '#/components/schemas/PostResponse'
+                        requestBody:
+                                content:
+                                        application/json:
+                                                schema:
+                                                        $ref: '#/components/schemas/PostBody'
+components:
+        schemas:
+                PostBody:
+                        title: PostBody
+                        type: object
+                        properties:
+                                value1:
+                                        type: string
+                        required:
+                                - value1
+                GetResponse:
+                        title: GetResponse
+                        type: object
+                        properties:
+                                get:
+                                        type: string
+                        required:
+                                - get
+                PostResponse:
+                        title: PostResponse
+                        type: object
+                        properties:
+                                post:
+                                        type: string
+                        required:
+                                - post

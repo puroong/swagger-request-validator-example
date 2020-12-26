@@ -22,6 +22,8 @@ dependencies {
 
 	implementation 'com.atlassian.oai:swagger-request-validator-core:2.11.2'
 	implementation 'com.atlassian.oai:swagger-request-validator-mockmvc:2.11.2'
+	testCompile 'io.rest-assured:spring-mock-mvc:3.3.0'
+	testImplementation('junit:junit:4.13')
 }
 
 test {
