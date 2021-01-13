@@ -7,9 +7,9 @@ trying [swagger request validator](https://bitbucket.org/atlassian/swagger-reque
 
 그동안 주로 Swagger를 사용했는데 구현이 완료되기 전까지 클라이언트와 API 스펙을 공유하기 어렵다는 단점이 있었습니다
 
-그에 비해 Stoplight는 사전에 클라이언트와 API 스펙이 용이했지만 종종 설계했던 API 스펙과 다르게 구현하는 문제점이 있었습니다
+그에 비해 Stoplight는 사전에 클라이언트와 API 스펙을 공유하는덴 용이했지만 종종 설계했던 API 스펙과 다르게 구현하는 문제점이 있었습니다
 
-Swagger Request Validator와 Stopligth를 함께 사용하면 API 스펙을 클라이언트와 공유할 수 있으면서 의도한 설계대로 구현됐는지 검사할 수 있습니다
+Swagger Request Validator와 Stoplight를 함께 사용하면 API 스펙을 클라이언트와 공유할 수 있으면서 의도한 설계대로 구현됐는지 검사할 수 있습니다
 
 (nodejs를 사용한다면 [chai-openapi-response-validator](https://github.com/openapi-library/OpenAPIValidators/tree/master/packages/chai-openapi-response-validator)를 참고하시기 바랍니다)
 
