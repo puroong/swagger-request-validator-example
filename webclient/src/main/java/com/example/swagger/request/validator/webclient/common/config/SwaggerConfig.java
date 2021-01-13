@@ -1,4 +1,4 @@
-package com.example.swagger.request.validator.example.config;
+package com.example.swagger.request.validator.webclient.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

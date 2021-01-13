@@ -1,4 +1,4 @@
-package com.example.swagger.request.validator.example;
+package com.example.swagger.request.validator.webclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
