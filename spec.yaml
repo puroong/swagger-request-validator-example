@@ -1,0 +1,105 @@
+openapi: 3.0.0
+info:
+  title: swagger-request-validator-test
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /test:
+    get:
+      summary: get test
+      tags: []
+      responses:
+        '200':
+          description: query 값이 200인 경우
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResponse'
+        '400':
+          description: 'query 값이 200, 401 모두 아닌 경우'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: query 값이 401인 경우
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      operationId: get-test
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: query
+          required: true
+    post:
+      summary: post test
+      operationId: post-test
+      responses:
+        '201':
+          description: PostTestRequest.value값이 201일 경우
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+        '400':
+          description: 'PostTestRequest.value값이 401, 200 모두 아닐 경우'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: PostTestRequest.value값이 401일 경우
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  value:
+                    type: string
+                required:
+                  - message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostBody'
+components:
+  schemas:
+    PostBody:
+      title: PostBody
+      type: object
+      properties:
+        value:
+          type: integer
+      required:
+        - value
+    GetResponse:
+      title: GetResponse
+      type: object
+      properties:
+        get:
+          type: string
+      required:
+        - get
+    PostResponse:
+      title: PostResponse
+      type: object
+      properties:
+        post:
+          type: string
+      required:
+        - post
+    ErrorResponse:
+      title: ErrorResponse
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
