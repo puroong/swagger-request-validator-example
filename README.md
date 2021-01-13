@@ -73,7 +73,8 @@ public class TestRestTemplate {
 	private final HttpClientOption[] httpClientOptions;
 
 	private final RestTemplate restTemplate;
-...
+    ...
+}
 ```
 
 request와 response를 검증하기 위해선 `RestTemplate`에 interceptor를 추가해야 하기 떄문에 의존성 주입받은 `TestRestTemplate`를 사용할 수 없습니다
@@ -84,7 +85,6 @@ test/java/com/example/swagger/request/validator/webclient/ApiTestContext.java
 ```java
 @Component
 public class ApiTestContext {
-    private ServletWebServerApplicationContext webServerAppCtxt;
     private TestRestTemplate testRestTemplate;
 
     private OpenApiValidationClientHttpRequestInterceptor validationInterceptor = new OpenApiValidationClientHttpRequestInterceptor(
@@ -97,7 +97,6 @@ public class ApiTestContext {
 
     @Autowired
     public ApiTestContext(ServletWebServerApplicationContext webServerAppCtxt) {
-        this.webServerAppCtxt = webServerAppCtxt;
         final int port = webServerAppCtxt.getWebServer().getPort();
         final String rootUri = "http://localhost:"+port;
 

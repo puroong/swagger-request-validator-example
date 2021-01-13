@@ -15,7 +15,6 @@ import java.util.Collections;
 
 @Component
 public class ApiTestContext {
-    private ServletWebServerApplicationContext webServerAppCtxt;
     private TestRestTemplate testRestTemplate;
 
     private OpenApiValidationClientHttpRequestInterceptor validationInterceptor = new OpenApiValidationClientHttpRequestInterceptor(
@@ -28,7 +27,6 @@ public class ApiTestContext {
 
     @Autowired
     public ApiTestContext(ServletWebServerApplicationContext webServerAppCtxt) {
-        this.webServerAppCtxt = webServerAppCtxt;
         final int port = webServerAppCtxt.getWebServer().getPort();
         final String rootUri = "http://localhost:"+port;
 

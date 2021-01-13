@@ -1,7 +1,7 @@
 package com.example.swagger.request.validator.webclient;
 
 import com.example.swagger.request.validator.webclient.file.request.PostFileRequest;
-import com.example.swagger.request.validator.webclient.response.PostFileResponse;
+import com.example.swagger.request.validator.webclient.file.response.PostFileResponse;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;

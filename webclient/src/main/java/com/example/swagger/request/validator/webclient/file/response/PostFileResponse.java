@@ -1,4 +1,4 @@
-package com.example.swagger.request.validator.webclient.response;
+package com.example.swagger.request.validator.webclient.file.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
