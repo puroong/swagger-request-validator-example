@@ -78,7 +78,7 @@ public class TestRestTemplate {
 
 request와 response를 검증하기 위해선 `RestTemplate`에 interceptor를 추가해야 하기 떄문에 의존성 주입받은 `TestRestTemplate`를 사용할 수 없습니다
 
-따라서 별도의 클래스에 `TestRestTemplate` 빈을 생성한 뒤 해당 클래스를 의존성 주입받아 사용해야 합니다
+따라서 별도의 클래스에서 `TestRestTemplate` 직접 생성한 뒤 해당 클래스를 의존성 주입받아 사용해야 합니다
 
 test/java/com/example/swagger/request/validator/webclient/ApiTestContext.java
 ```java
